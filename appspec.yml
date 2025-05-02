@@ -1,13 +1,10 @@
 version: 0.0
 os: linux
 files:
-  - source: web/index.html
-    destination: /usr/share/nginx/html
+  - source: /
+    destination: /usr/share/nginx/html/
+   
 hooks:
-  BeforeInstall:
-    - location: scripts/cleanup.sh
-      timeout: 30
-      runas: root
   AfterInstall:
     - location: scripts/install_nginx.sh
       timeout: 300
